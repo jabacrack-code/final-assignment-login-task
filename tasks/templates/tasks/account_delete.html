@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h2>Unsubscribe Page</h2>
+<p>
+    <strong>username</strong> {{ user.username }}
+</p>
+<p>
+    <strong>Email address</strong> {{ user.email }}
+</p>
+<p>
+    <strong>age</strong> {{ user.age }}
+</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Withdraw</button>
+</form>
+<a href="{% url 'tasks:account_detail' %}">Return</a>
+{% endblock %}

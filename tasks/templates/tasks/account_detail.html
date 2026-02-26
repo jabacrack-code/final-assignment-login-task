@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h2>Member Information Details Page</h2>
+<p>
+    <strong>username</strong> {{ user.username }}
+</p>
+<p>
+    <strong>Email address</strong> {{ user.email }}
+</p>
+<p>
+    <strong>age</strong> {{ user.age }}
+</p>
+<p>
+    <a href="{% url 'tasks:account_edit' %}">edit</a>
+    <a href="{% url 'tasks:password_change' %}">Change Password</a>
+</p>
+{% endblock %}

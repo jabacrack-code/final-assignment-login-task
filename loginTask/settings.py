@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'login_task',
-        'USER': 'sample_user',
-        'PASSWORD': 'password',
+        'USER': 'postgres',
+        'PASSWORD': 'maina',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -124,7 +124,13 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 STATIC_URL = 'static/'
 
+LOGIN_URL = 'tasks:login'
+LOGIN_REDIRECT_URL = 'tasks:index'
+LOGOUT_REDIRECT_URL = 'tasks:index'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'tasks.User'
