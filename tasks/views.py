@@ -47,6 +47,7 @@ class AccountDeleteView(LoginRequiredMixin, DeleteView):
 
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
     tasks = Task.objects.all()
     params = {

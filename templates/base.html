@@ -12,13 +12,13 @@
 <body>
   <nav>
     <ul>
-      <li><a href="{% url 'tasks:index' %}">タスク一覧</a></li>
+      <li><a href="{% url 'tasks:index' %}">Task list</a></li>
       {% if user.is_authenticated %}
-      <li><a href="{% url 'tasks:account_detail' %}">会員情報</a></li>
-      <li><a href="{% url 'tasks:logout' %}">ログアウト</a></li>
+      <li><a href="{% url 'tasks:account_detail' %}">Member Information</a></li>
+      <li><a href="{% url 'tasks:logout' %}">Log out</a></li>
       {% else %}
-      <li><a href="{% url 'tasks:signup' %}">会員登録</a></li>
-      <li><a href="{% url 'tasks:login' %}">ログイン</a></li>
+      <li><a href="{% url 'tasks:signup' %}">Member Registration</a></li>
+      <li><a href="{% url 'tasks:login' %}">Login</a></li>
       {% endif %}
     </ul>
   </nav>
