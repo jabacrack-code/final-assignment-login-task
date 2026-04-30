@@ -12,8 +12,10 @@ User = get_user_model()
 class TaskLoginView(LoginView):
     template_name = 'tasks/login.html'
 
-class TaskLogoutView(LogoutView):
-    next_page = reverse_lazy('tasks:index')
+def task_logout(request):
+    from django.contrib.auth import logout
+    logout(request)
+    return redirect('tasks:login')
 
 class AccountRegistrationView(CreateView):
     template_name = 'tasks/signup.html'
